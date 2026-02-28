@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajasthani OCR Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.0/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Rajasthani OCR Processor</h1>
+<p class="subtitle">Khamma Ghani! Upload your Rajasthani text (5 fonts, 11pt) to convert it to editable Devanagari.</p>
+
+        <div class="upload-section">
+            <input type="file" id="imageInput" accept="image/*">
+            <button id="startBtn">Recognize Text</button>
+        </div>
+
+        <div id="status">Status: Ready</div>
+
+        <div class="main-layout">
+            <div class="stats-box">
+                <h3>Statistics</h3>
+                <p>Words: <span id="wordCount">0</span></p>
+                <p>Sentences: <span id="sentenceCount">0</span></p>
+                <p>Characters: <span id="charCount">0</span></p>
+                <p>Avg Word Length: <span id="avgWord">0</span></p>
+            </div>
+
+            <div class="text-box">
+                <textarea id="outputArea" placeholder="Recognized text will appear here..."></textarea>
+                <button id="downloadBtn">Download .docx</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
