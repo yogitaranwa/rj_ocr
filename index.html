@@ -33,9 +33,17 @@
                 <button id="clearBtn" class="palace-btn" style="width: 100%; background-color: #4a2c2a;">Clear All</button>
             </div>
 
+            <div class="preview-box">
+                <h3>Source Image</h3>
+                <div id="imagePreviewContainer">
+                    <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
+                    <p id="previewPlaceholder">No image selected</p>
+                </div>
+            </div>
+
             <div class="text-box">
+                <h3>Converted Text</h3>
                 <textarea id="outputArea" placeholder="Recognized text will appear here..."></textarea>
-                
                 <div class="action-bar">
                     <button id="spellCheckBtn" class="palace-btn">Check Spelling</button>
                     <button id="downloadBtn" class="palace-btn">Download .docx</button>
@@ -45,7 +53,7 @@
 
         <div id="spellResults" style="margin-top: 40px; display: none;">
             <h3 style="color: #8e4432; border-bottom: 2px solid #d47a63; padding-bottom: 10px;">
-                Spell Check Results (Edit Distance Comparison)
+                Spell Check Results (Edit Distance)
             </h3>
             <table id="resultTable">
                 <thead>
@@ -54,7 +62,7 @@
                         <th>Hamming</th>
                         <th>LCS</th>
                         <th>Levenshtein</th>
-                        <th>Jaro (Zaro)</th>
+                        <th>Jaro</th>
                         <th>Benchmark</th>
                     </tr>
                 </thead>
