@@ -13,11 +13,11 @@
 
     <div class="container">
         <h1>Rajasthani OCR Processor</h1>
-<p class="subtitle">Khamma Ghani! Upload your Rajasthani text (5 fonts, 11pt) to convert it to editable Devanagari.</p>
+        <p class="subtitle">Khamma Ghani! Upload your Rajasthani text (5 fonts, 11pt) to convert it to editable Devanagari.</p>
 
         <div class="upload-section">
             <input type="file" id="imageInput" accept="image/*">
-            <button id="startBtn">Recognize Text</button>
+            <button id="startBtn" class="palace-btn">Recognize Text</button>
         </div>
 
         <div id="status">Status: Ready</div>
@@ -29,12 +29,37 @@
                 <p>Sentences: <span id="sentenceCount">0</span></p>
                 <p>Characters: <span id="charCount">0</span></p>
                 <p>Avg Word Length: <span id="avgWord">0</span></p>
+                <hr style="border: 0.5px solid #d47a63; margin: 15px 0;">
+                <button id="clearBtn" class="palace-btn" style="width: 100%; background-color: #4a2c2a;">Clear All</button>
             </div>
 
             <div class="text-box">
                 <textarea id="outputArea" placeholder="Recognized text will appear here..."></textarea>
-                <button id="downloadBtn">Download .docx</button>
+                
+                <div class="action-bar">
+                    <button id="spellCheckBtn" class="palace-btn">Check Spelling</button>
+                    <button id="downloadBtn" class="palace-btn">Download .docx</button>
+                </div>
             </div>
+        </div>
+
+        <div id="spellResults" style="margin-top: 40px; display: none;">
+            <h3 style="color: #8e4432; border-bottom: 2px solid #d47a63; padding-bottom: 10px;">
+                Spell Check Results (Edit Distance Comparison)
+            </h3>
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Hamming</th>
+                        <th>LCS</th>
+                        <th>Levenshtein</th>
+                        <th>Jaro (Zaro)</th>
+                        <th>Benchmark</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
         </div>
     </div>
 
